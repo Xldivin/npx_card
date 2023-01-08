@@ -1,13 +1,13 @@
 {
-    "name": "rahikhan",
-    "version": "2.2.2",
-    "author": "Rahi Khan <rahikhan360@gmail.com> (https://rahikhan.gtsb.io)",
-    "description": "A personal card for Rahi Khan",
+    "name": "xldivin",
+    "version": "1.0.0",
+    "author": "Shyaka Axel Divin <xldivin@gmail.com> (https://xldivin.vercel.app/)",
+    "description": "A personal card for Axel Divin",
     "main": "card.js",
     "bin": "./card.js",
     "repository": {
         "type": "git",
-        "url": "https://github.com/rahi-khan/npx_card.git"
+        "url": "https://github.com/Xldivin/npx_card"
     },
     "scripts": {
         "setup": "ncu -u && npm i",

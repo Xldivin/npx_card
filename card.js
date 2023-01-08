@@ -27,7 +27,6 @@ const {
     personal_site,
     npx_card_handle,
     job_title,
-    resume_url,
 } = user_data;
 
 const prompt = inquirer.createPromptModule();
@@ -44,29 +43,6 @@ const questions = [
                 value: () => {
                     open(`mailto:${user_email}`);
                     console.log("\nDone, see you soon at inbox.\n");
-                },
-            },
-            //// Download Resume
-            {
-                name: `Download my ${chalk.magentaBright.bold("Resume")}?`,
-                value: () => {
-                    // cliSpinners.dots;
-                    const loader = ora({
-                        text: " Downloading Resume",
-                        spinner: cliSpinners.material,
-                    }).start();
-                    let pipe = request(`${resume_url}`).pipe(
-                        fs.createWriteStream(`./${npx_card_handle}-resume.html`)
-                    );
-                    pipe.on("finish", function () {
-                        let downloadPath = path.join(
-                            process.cwd(),
-                            `${npx_card_handle}-resume.html`
-                        );
-                        console.log(`\nResume Downloaded at ${downloadPath} \n`);
-                        open(downloadPath);
-                        loader.stop();
-                    });
                 },
             },
             //// Quit
